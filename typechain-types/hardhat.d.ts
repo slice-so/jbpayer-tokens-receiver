@@ -89,6 +89,14 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Ownable__factory>;
     getContractFactory(
+      name: "IVotes",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IVotes__factory>;
+    getContractFactory(
+      name: "Votes",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Votes__factory>;
+    getContractFactory(
       name: "IERC1822Proxiable",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC1822Proxiable__factory>;
@@ -144,6 +152,10 @@ declare module "hardhat/types/runtime" {
       name: "ERC721",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ERC721__factory>;
+    getContractFactory(
+      name: "ERC721Votes",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ERC721Votes__factory>;
     getContractFactory(
       name: "IERC721Metadata",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -213,33 +225,25 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IUniswapV3PoolState__factory>;
     getContractFactory(
-      name: "Allowlisted",
+      name: "JBETHERC20ProjectPayerClone",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Allowlisted__factory>;
+    ): Promise<Contracts.JBETHERC20ProjectPayerClone__factory>;
     getContractFactory(
-      name: "Gated",
+      name: "JBETHERC20ProjectPayerERC1155Receiver",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Gated__factory>;
+    ): Promise<Contracts.JBETHERC20ProjectPayerERC1155Receiver__factory>;
     getContractFactory(
-      name: "SlicerPurchasable",
+      name: "JBETHERC20ProjectPayerERC1155ReceiverClone",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.SlicerPurchasable__factory>;
+    ): Promise<Contracts.JBETHERC20ProjectPayerERC1155ReceiverClone__factory>;
     getContractFactory(
-      name: "SlicerPurchasablePayable",
+      name: "JBETHERC20ProjectPayerERC1155ReceiverDeployer",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.SlicerPurchasablePayable__factory>;
+    ): Promise<Contracts.JBETHERC20ProjectPayerERC1155ReceiverDeployer__factory>;
     getContractFactory(
-      name: "ISlicerPurchasable",
+      name: "JBETHERC20ProjectPayerTokensReceiver",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ISlicerPurchasable__factory>;
-    getContractFactory(
-      name: "ISlicerPurchasablePayable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ISlicerPurchasablePayable__factory>;
-    getContractFactory(
-      name: "MyContract",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.MyContract__factory>;
+    ): Promise<Contracts.JBETHERC20ProjectPayerTokensReceiver__factory>;
     getContractFactory(
       name: "JuiceboxProject",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -453,6 +457,246 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.YearnYielder__factory>;
     getContractFactory(
+      name: "JBControllerUtility",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBControllerUtility__factory>;
+    getContractFactory(
+      name: "JBOperatable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBOperatable__factory>;
+    getContractFactory(
+      name: "JBPayoutRedemptionPaymentTerminal",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBPayoutRedemptionPaymentTerminal__factory>;
+    getContractFactory(
+      name: "JBSingleTokenPaymentTerminal",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBSingleTokenPaymentTerminal__factory>;
+    getContractFactory(
+      name: "IJBAllowanceTerminal",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBAllowanceTerminal__factory>;
+    getContractFactory(
+      name: "IJBController",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBController__factory>;
+    getContractFactory(
+      name: "IJBControllerUtility",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBControllerUtility__factory>;
+    getContractFactory(
+      name: "IJBDirectory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBDirectory__factory>;
+    getContractFactory(
+      name: "IJBETHERC20ProjectPayerDeployer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBETHERC20ProjectPayerDeployer__factory>;
+    getContractFactory(
+      name: "IJBETHERC20SplitsPayerDeployer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBETHERC20SplitsPayerDeployer__factory>;
+    getContractFactory(
+      name: "IJBFeeGauge",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBFeeGauge__factory>;
+    getContractFactory(
+      name: "IJBFundingCycleBallot",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBFundingCycleBallot__factory>;
+    getContractFactory(
+      name: "IJBFundingCycleDataSource",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBFundingCycleDataSource__factory>;
+    getContractFactory(
+      name: "IJBFundingCycleStore",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBFundingCycleStore__factory>;
+    getContractFactory(
+      name: "IJBMigratable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBMigratable__factory>;
+    getContractFactory(
+      name: "IJBOperatable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBOperatable__factory>;
+    getContractFactory(
+      name: "IJBOperatorStore",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBOperatorStore__factory>;
+    getContractFactory(
+      name: "IJBPayDelegate",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBPayDelegate__factory>;
+    getContractFactory(
+      name: "IJBPaymentTerminal",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBPaymentTerminal__factory>;
+    getContractFactory(
+      name: "IJBPayoutRedemptionPaymentTerminal",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBPayoutRedemptionPaymentTerminal__factory>;
+    getContractFactory(
+      name: "IJBPayoutTerminal",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBPayoutTerminal__factory>;
+    getContractFactory(
+      name: "IJBPriceFeed",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBPriceFeed__factory>;
+    getContractFactory(
+      name: "IJBPrices",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBPrices__factory>;
+    getContractFactory(
+      name: "IJBProjectPayer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBProjectPayer__factory>;
+    getContractFactory(
+      name: "IJBProjects",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBProjects__factory>;
+    getContractFactory(
+      name: "IJBReconfigurationBufferBallot",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBReconfigurationBufferBallot__factory>;
+    getContractFactory(
+      name: "IJBRedemptionDelegate",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBRedemptionDelegate__factory>;
+    getContractFactory(
+      name: "IJBRedemptionTerminal",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBRedemptionTerminal__factory>;
+    getContractFactory(
+      name: "IJBSingleTokenPaymentTerminal",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBSingleTokenPaymentTerminal__factory>;
+    getContractFactory(
+      name: "IJBSingleTokenPaymentTerminalStore",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBSingleTokenPaymentTerminalStore__factory>;
+    getContractFactory(
+      name: "IJBSplitAllocator",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBSplitAllocator__factory>;
+    getContractFactory(
+      name: "IJBSplitsPayer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBSplitsPayer__factory>;
+    getContractFactory(
+      name: "IJBSplitsStore",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBSplitsStore__factory>;
+    getContractFactory(
+      name: "IJBPaymentTerminalUtility",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBPaymentTerminalUtility__factory>;
+    getContractFactory(
+      name: "IJBToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBToken__factory>;
+    getContractFactory(
+      name: "IJBTokenStore",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBTokenStore__factory>;
+    getContractFactory(
+      name: "IJBTokenUriResolver",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IJBTokenUriResolver__factory>;
+    getContractFactory(
+      name: "JBChainlinkV3PriceFeed",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBChainlinkV3PriceFeed__factory>;
+    getContractFactory(
+      name: "JBController",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBController__factory>;
+    getContractFactory(
+      name: "JBDirectory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBDirectory__factory>;
+    getContractFactory(
+      name: "JBERC20PaymentTerminal",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBERC20PaymentTerminal__factory>;
+    getContractFactory(
+      name: "JBETHERC20ProjectPayer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHERC20ProjectPayer__factory>;
+    getContractFactory(
+      name: "JBETHERC20ProjectPayerDeployer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHERC20ProjectPayerDeployer__factory>;
+    getContractFactory(
+      name: "JBETHERC20SplitsPayer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHERC20SplitsPayer__factory>;
+    getContractFactory(
+      name: "JBETHERC20SplitsPayerDeployer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHERC20SplitsPayerDeployer__factory>;
+    getContractFactory(
+      name: "JBETHPaymentTerminal",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHPaymentTerminal__factory>;
+    getContractFactory(
+      name: "JBFundingCycleStore",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBFundingCycleStore__factory>;
+    getContractFactory(
+      name: "JBOperatorStore",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBOperatorStore__factory>;
+    getContractFactory(
+      name: "JBPrices",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBPrices__factory>;
+    getContractFactory(
+      name: "JBProjects",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBProjects__factory>;
+    getContractFactory(
+      name: "JBReconfigurationBufferBallot",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBReconfigurationBufferBallot__factory>;
+    getContractFactory(
+      name: "JBSingleTokenPaymentTerminalStore",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBSingleTokenPaymentTerminalStore__factory>;
+    getContractFactory(
+      name: "JBSplitsStore",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBSplitsStore__factory>;
+    getContractFactory(
+      name: "JBToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBToken__factory>;
+    getContractFactory(
+      name: "JBTokenStore",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBTokenStore__factory>;
+    getContractFactory(
+      name: "JBConstants",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBConstants__factory>;
+    getContractFactory(
+      name: "JBCurrencies",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBCurrencies__factory>;
+    getContractFactory(
+      name: "JBOperations",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBOperations__factory>;
+    getContractFactory(
+      name: "JBSplitsGroups",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBSplitsGroups__factory>;
+    getContractFactory(
+      name: "JBTokens",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBTokens__factory>;
+    getContractFactory(
       name: "FundsModule",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.FundsModule__factory>;
@@ -605,6 +849,16 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.Ownable>;
     getContractAt(
+      name: "IVotes",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IVotes>;
+    getContractAt(
+      name: "Votes",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Votes>;
+    getContractAt(
       name: "IERC1822Proxiable",
       address: string,
       signer?: ethers.Signer
@@ -674,6 +928,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.ERC721>;
+    getContractAt(
+      name: "ERC721Votes",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ERC721Votes>;
     getContractAt(
       name: "IERC721Metadata",
       address: string,
@@ -760,40 +1019,30 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IUniswapV3PoolState>;
     getContractAt(
-      name: "Allowlisted",
+      name: "JBETHERC20ProjectPayerClone",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.Allowlisted>;
+    ): Promise<Contracts.JBETHERC20ProjectPayerClone>;
     getContractAt(
-      name: "Gated",
+      name: "JBETHERC20ProjectPayerERC1155Receiver",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.Gated>;
+    ): Promise<Contracts.JBETHERC20ProjectPayerERC1155Receiver>;
     getContractAt(
-      name: "SlicerPurchasable",
+      name: "JBETHERC20ProjectPayerERC1155ReceiverClone",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.SlicerPurchasable>;
+    ): Promise<Contracts.JBETHERC20ProjectPayerERC1155ReceiverClone>;
     getContractAt(
-      name: "SlicerPurchasablePayable",
+      name: "JBETHERC20ProjectPayerERC1155ReceiverDeployer",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.SlicerPurchasablePayable>;
+    ): Promise<Contracts.JBETHERC20ProjectPayerERC1155ReceiverDeployer>;
     getContractAt(
-      name: "ISlicerPurchasable",
+      name: "JBETHERC20ProjectPayerTokensReceiver",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.ISlicerPurchasable>;
-    getContractAt(
-      name: "ISlicerPurchasablePayable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ISlicerPurchasablePayable>;
-    getContractAt(
-      name: "MyContract",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.MyContract>;
+    ): Promise<Contracts.JBETHERC20ProjectPayerTokensReceiver>;
     getContractAt(
       name: "JuiceboxProject",
       address: string,
@@ -1059,6 +1308,306 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.YearnYielder>;
+    getContractAt(
+      name: "JBControllerUtility",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBControllerUtility>;
+    getContractAt(
+      name: "JBOperatable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBOperatable>;
+    getContractAt(
+      name: "JBPayoutRedemptionPaymentTerminal",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBPayoutRedemptionPaymentTerminal>;
+    getContractAt(
+      name: "JBSingleTokenPaymentTerminal",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBSingleTokenPaymentTerminal>;
+    getContractAt(
+      name: "IJBAllowanceTerminal",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBAllowanceTerminal>;
+    getContractAt(
+      name: "IJBController",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBController>;
+    getContractAt(
+      name: "IJBControllerUtility",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBControllerUtility>;
+    getContractAt(
+      name: "IJBDirectory",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBDirectory>;
+    getContractAt(
+      name: "IJBETHERC20ProjectPayerDeployer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBETHERC20ProjectPayerDeployer>;
+    getContractAt(
+      name: "IJBETHERC20SplitsPayerDeployer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBETHERC20SplitsPayerDeployer>;
+    getContractAt(
+      name: "IJBFeeGauge",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBFeeGauge>;
+    getContractAt(
+      name: "IJBFundingCycleBallot",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBFundingCycleBallot>;
+    getContractAt(
+      name: "IJBFundingCycleDataSource",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBFundingCycleDataSource>;
+    getContractAt(
+      name: "IJBFundingCycleStore",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBFundingCycleStore>;
+    getContractAt(
+      name: "IJBMigratable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBMigratable>;
+    getContractAt(
+      name: "IJBOperatable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBOperatable>;
+    getContractAt(
+      name: "IJBOperatorStore",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBOperatorStore>;
+    getContractAt(
+      name: "IJBPayDelegate",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBPayDelegate>;
+    getContractAt(
+      name: "IJBPaymentTerminal",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBPaymentTerminal>;
+    getContractAt(
+      name: "IJBPayoutRedemptionPaymentTerminal",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBPayoutRedemptionPaymentTerminal>;
+    getContractAt(
+      name: "IJBPayoutTerminal",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBPayoutTerminal>;
+    getContractAt(
+      name: "IJBPriceFeed",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBPriceFeed>;
+    getContractAt(
+      name: "IJBPrices",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBPrices>;
+    getContractAt(
+      name: "IJBProjectPayer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBProjectPayer>;
+    getContractAt(
+      name: "IJBProjects",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBProjects>;
+    getContractAt(
+      name: "IJBReconfigurationBufferBallot",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBReconfigurationBufferBallot>;
+    getContractAt(
+      name: "IJBRedemptionDelegate",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBRedemptionDelegate>;
+    getContractAt(
+      name: "IJBRedemptionTerminal",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBRedemptionTerminal>;
+    getContractAt(
+      name: "IJBSingleTokenPaymentTerminal",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBSingleTokenPaymentTerminal>;
+    getContractAt(
+      name: "IJBSingleTokenPaymentTerminalStore",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBSingleTokenPaymentTerminalStore>;
+    getContractAt(
+      name: "IJBSplitAllocator",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBSplitAllocator>;
+    getContractAt(
+      name: "IJBSplitsPayer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBSplitsPayer>;
+    getContractAt(
+      name: "IJBSplitsStore",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBSplitsStore>;
+    getContractAt(
+      name: "IJBPaymentTerminalUtility",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBPaymentTerminalUtility>;
+    getContractAt(
+      name: "IJBToken",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBToken>;
+    getContractAt(
+      name: "IJBTokenStore",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBTokenStore>;
+    getContractAt(
+      name: "IJBTokenUriResolver",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IJBTokenUriResolver>;
+    getContractAt(
+      name: "JBChainlinkV3PriceFeed",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBChainlinkV3PriceFeed>;
+    getContractAt(
+      name: "JBController",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBController>;
+    getContractAt(
+      name: "JBDirectory",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBDirectory>;
+    getContractAt(
+      name: "JBERC20PaymentTerminal",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBERC20PaymentTerminal>;
+    getContractAt(
+      name: "JBETHERC20ProjectPayer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHERC20ProjectPayer>;
+    getContractAt(
+      name: "JBETHERC20ProjectPayerDeployer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHERC20ProjectPayerDeployer>;
+    getContractAt(
+      name: "JBETHERC20SplitsPayer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHERC20SplitsPayer>;
+    getContractAt(
+      name: "JBETHERC20SplitsPayerDeployer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHERC20SplitsPayerDeployer>;
+    getContractAt(
+      name: "JBETHPaymentTerminal",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHPaymentTerminal>;
+    getContractAt(
+      name: "JBFundingCycleStore",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBFundingCycleStore>;
+    getContractAt(
+      name: "JBOperatorStore",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBOperatorStore>;
+    getContractAt(
+      name: "JBPrices",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBPrices>;
+    getContractAt(
+      name: "JBProjects",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBProjects>;
+    getContractAt(
+      name: "JBReconfigurationBufferBallot",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBReconfigurationBufferBallot>;
+    getContractAt(
+      name: "JBSingleTokenPaymentTerminalStore",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBSingleTokenPaymentTerminalStore>;
+    getContractAt(
+      name: "JBSplitsStore",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBSplitsStore>;
+    getContractAt(
+      name: "JBToken",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBToken>;
+    getContractAt(
+      name: "JBTokenStore",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBTokenStore>;
+    getContractAt(
+      name: "JBConstants",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBConstants>;
+    getContractAt(
+      name: "JBCurrencies",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBCurrencies>;
+    getContractAt(
+      name: "JBOperations",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBOperations>;
+    getContractAt(
+      name: "JBSplitsGroups",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBSplitsGroups>;
+    getContractAt(
+      name: "JBTokens",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBTokens>;
     getContractAt(
       name: "FundsModule",
       address: string,

@@ -1,21 +1,40 @@
 import { ethers } from "hardhat"
 import addresses from "../addresses.json"
 
-// Set these before proceeding
-const env = "testnet" // "testnet" || "mainnet"
-const slicerId = 1 // The ID of the slicer that will be able to interact with this contract
+const env = "testnet" // tesntet OR mainnet
+
+// Constructor variables
+const _defaultProjectId = 4236
+const _defaultBeneficiary = ethers.constants.AddressZero
+const _defaultPreferClaimedTokens = true
+const _defaultMemo = "Sent from Slice"
+const _defaultMetadata = [] as any
+const _directory = addresses[env].JBDirectory
+const _owner = "0xAe009d532328FF09e09E5d506aB5BBeC3c25c0FF"
 
 async function main() {
+  // AddToBalance preferred to avoid ERC20 being minted to Slice {fundsModule}
+  const _defaultPreferAddToBalance =
+    _defaultBeneficiary == ethers.constants.AddressZero
+
   console.log("deploying")
 
-  const CONTRACT = await ethers.getContractFactory("MyContract")
+  const CONTRACT = await ethers.getContractFactory(
+    "JBETHERC20ProjectPayerERC1155Receiver"
+  )
   const contract = await CONTRACT.deploy(
-    addresses[env]["ProductsModule"],
-    slicerId
+    _defaultProjectId,
+    _defaultBeneficiary,
+    _defaultPreferClaimedTokens,
+    _defaultMemo,
+    _defaultMetadata,
+    _defaultPreferAddToBalance,
+    _directory,
+    _owner
   )
   await contract.deployed()
 
-  console.log("deploying completed successfully! Address: " + contract.address)
+  console.log("Contract deployed successfully! Address: " + contract.address)
 }
 
 main()
