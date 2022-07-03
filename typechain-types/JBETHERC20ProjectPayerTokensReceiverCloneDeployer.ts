@@ -17,15 +17,15 @@ import { FunctionFragment, Result, EventFragment } from "@ethersproject/abi";
 import { Listener, Provider } from "@ethersproject/providers";
 import { TypedEventFilter, TypedEvent, TypedListener, OnEvent } from "./common";
 
-export interface JBETHERC20ProjectPayerERC1155ReceiverDeployerInterface
+export interface JBETHERC20ProjectPayerTokensReceiverCloneDeployerInterface
   extends utils.Interface {
-  contractName: "JBETHERC20ProjectPayerERC1155ReceiverDeployer";
+  contractName: "JBETHERC20ProjectPayerTokensReceiverCloneDeployer";
   functions: {
-    "deployProjectPayer(uint256,address,bool,string,bytes,bool,address,address)": FunctionFragment;
+    "cloneProjectPayer(uint256,address,bool,string,bytes,bool,address,address)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "deployProjectPayer",
+    functionFragment: "cloneProjectPayer",
     values: [
       BigNumberish,
       string,
@@ -39,7 +39,7 @@ export interface JBETHERC20ProjectPayerERC1155ReceiverDeployerInterface
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "deployProjectPayer",
+    functionFragment: "cloneProjectPayer",
     data: BytesLike
   ): Result;
 
@@ -80,14 +80,14 @@ export type DeployProjectPayerEvent = TypedEvent<
 export type DeployProjectPayerEventFilter =
   TypedEventFilter<DeployProjectPayerEvent>;
 
-export interface JBETHERC20ProjectPayerERC1155ReceiverDeployer
+export interface JBETHERC20ProjectPayerTokensReceiverCloneDeployer
   extends BaseContract {
-  contractName: "JBETHERC20ProjectPayerERC1155ReceiverDeployer";
+  contractName: "JBETHERC20ProjectPayerTokensReceiverCloneDeployer";
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
 
-  interface: JBETHERC20ProjectPayerERC1155ReceiverDeployerInterface;
+  interface: JBETHERC20ProjectPayerTokensReceiverCloneDeployerInterface;
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
@@ -109,7 +109,7 @@ export interface JBETHERC20ProjectPayerERC1155ReceiverDeployer
   removeListener: OnEvent<this>;
 
   functions: {
-    deployProjectPayer(
+    cloneProjectPayer(
       _defaultProjectId: BigNumberish,
       _defaultBeneficiary: string,
       _defaultPreferClaimedTokens: boolean,
@@ -122,7 +122,7 @@ export interface JBETHERC20ProjectPayerERC1155ReceiverDeployer
     ): Promise<ContractTransaction>;
   };
 
-  deployProjectPayer(
+  cloneProjectPayer(
     _defaultProjectId: BigNumberish,
     _defaultBeneficiary: string,
     _defaultPreferClaimedTokens: boolean,
@@ -135,7 +135,7 @@ export interface JBETHERC20ProjectPayerERC1155ReceiverDeployer
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    deployProjectPayer(
+    cloneProjectPayer(
       _defaultProjectId: BigNumberish,
       _defaultBeneficiary: string,
       _defaultPreferClaimedTokens: boolean,
@@ -176,7 +176,7 @@ export interface JBETHERC20ProjectPayerERC1155ReceiverDeployer
   };
 
   estimateGas: {
-    deployProjectPayer(
+    cloneProjectPayer(
       _defaultProjectId: BigNumberish,
       _defaultBeneficiary: string,
       _defaultPreferClaimedTokens: boolean,
@@ -190,7 +190,7 @@ export interface JBETHERC20ProjectPayerERC1155ReceiverDeployer
   };
 
   populateTransaction: {
-    deployProjectPayer(
+    cloneProjectPayer(
       _defaultProjectId: BigNumberish,
       _defaultBeneficiary: string,
       _defaultPreferClaimedTokens: boolean,

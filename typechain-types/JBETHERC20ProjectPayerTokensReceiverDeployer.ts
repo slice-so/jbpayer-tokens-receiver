@@ -17,9 +17,9 @@ import { FunctionFragment, Result, EventFragment } from "@ethersproject/abi";
 import { Listener, Provider } from "@ethersproject/providers";
 import { TypedEventFilter, TypedEvent, TypedListener, OnEvent } from "./common";
 
-export interface JBETHERC20ProjectPayerERC1155ReceiverDeployerInterface
+export interface JBETHERC20ProjectPayerTokensReceiverDeployerInterface
   extends utils.Interface {
-  contractName: "JBETHERC20ProjectPayerERC1155ReceiverDeployer";
+  contractName: "JBETHERC20ProjectPayerTokensReceiverDeployer";
   functions: {
     "deployProjectPayer(uint256,address,bool,string,bytes,bool,address,address)": FunctionFragment;
   };
@@ -80,14 +80,14 @@ export type DeployProjectPayerEvent = TypedEvent<
 export type DeployProjectPayerEventFilter =
   TypedEventFilter<DeployProjectPayerEvent>;
 
-export interface JBETHERC20ProjectPayerERC1155ReceiverDeployer
+export interface JBETHERC20ProjectPayerTokensReceiverDeployer
   extends BaseContract {
-  contractName: "JBETHERC20ProjectPayerERC1155ReceiverDeployer";
+  contractName: "JBETHERC20ProjectPayerTokensReceiverDeployer";
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
 
-  interface: JBETHERC20ProjectPayerERC1155ReceiverDeployerInterface;
+  interface: JBETHERC20ProjectPayerTokensReceiverDeployerInterface;
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,

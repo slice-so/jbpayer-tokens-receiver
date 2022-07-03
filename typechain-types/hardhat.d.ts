@@ -229,6 +229,26 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.JBETHERC20ProjectPayerClone__factory>;
     getContractFactory(
+      name: "JBETHERC20ProjectPayerERC1155ReceiverClone",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHERC20ProjectPayerERC1155ReceiverClone__factory>;
+    getContractFactory(
+      name: "JBETHERC20ProjectPayerERC1155ReceiverCloneDeployer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHERC20ProjectPayerERC1155ReceiverCloneDeployer__factory>;
+    getContractFactory(
+      name: "JBETHERC20ProjectPayerTokensReceiverClone",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHERC20ProjectPayerTokensReceiverClone__factory>;
+    getContractFactory(
+      name: "JBETHERC20ProjectPayerTokensReceiverCloneDeployer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHERC20ProjectPayerTokensReceiverCloneDeployer__factory>;
+    getContractFactory(
+      name: "JBETHERC20ProjectPayerClone",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHERC20ProjectPayerClone__factory>;
+    getContractFactory(
       name: "JBETHERC20ProjectPayerERC1155Receiver",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.JBETHERC20ProjectPayerERC1155Receiver__factory>;
@@ -244,6 +264,10 @@ declare module "hardhat/types/runtime" {
       name: "JBETHERC20ProjectPayerTokensReceiver",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.JBETHERC20ProjectPayerTokensReceiver__factory>;
+    getContractFactory(
+      name: "JBETHERC20ProjectPayerTokensReceiverDeployer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.JBETHERC20ProjectPayerTokensReceiverDeployer__factory>;
     getContractFactory(
       name: "JuiceboxProject",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -1024,6 +1048,31 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.JBETHERC20ProjectPayerClone>;
     getContractAt(
+      name: "JBETHERC20ProjectPayerERC1155ReceiverClone",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHERC20ProjectPayerERC1155ReceiverClone>;
+    getContractAt(
+      name: "JBETHERC20ProjectPayerERC1155ReceiverCloneDeployer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHERC20ProjectPayerERC1155ReceiverCloneDeployer>;
+    getContractAt(
+      name: "JBETHERC20ProjectPayerTokensReceiverClone",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHERC20ProjectPayerTokensReceiverClone>;
+    getContractAt(
+      name: "JBETHERC20ProjectPayerTokensReceiverCloneDeployer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHERC20ProjectPayerTokensReceiverCloneDeployer>;
+    getContractAt(
+      name: "JBETHERC20ProjectPayerClone",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHERC20ProjectPayerClone>;
+    getContractAt(
       name: "JBETHERC20ProjectPayerERC1155Receiver",
       address: string,
       signer?: ethers.Signer
@@ -1043,6 +1092,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.JBETHERC20ProjectPayerTokensReceiver>;
+    getContractAt(
+      name: "JBETHERC20ProjectPayerTokensReceiverDeployer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.JBETHERC20ProjectPayerTokensReceiverDeployer>;
     getContractAt(
       name: "JuiceboxProject",
       address: string,
