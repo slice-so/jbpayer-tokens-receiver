@@ -26,7 +26,13 @@ This contract is able to receive `Slices` (ERC1155 tokens) and receive income fr
 
 ## Deployment - Immutable clones
 
-[Immutable clones](https://docs.openzeppelin.com/contracts/4.x/api/proxy#Clones) allow to reduce deployment cost of `project payer` by ~80-85%. The following contracts can be found in `contracts/clone`:
+These extensions can be deployed by running `scripts/clone.ts`, or using the interface provided by Slice at [slice.so/jbpayer](https://slice.so/jbpayer) (on Rinkeby, [testnet.slice.so/jbpayer](https://testnet.slice.so/jbpayer))
+
+> [Immutable clones](https://docs.openzeppelin.com/contracts/4.x/api/proxy#Clones) allow to reduce deployment cost of `project payer` by ~80-85%.
+
+### Contracts
+
+The following contracts can be found in `contracts/clone`:
 
 - `JBETHERC20ProjectPayerClone`: Clone implementation of original `JBETHERC20ProjectPayer`
 - `JBETHERC20ProjectPayerERC1155ReceiverClone`: Clone implementation of `JBETHERC20ProjectPayerERC1155Receiver`
@@ -34,7 +40,7 @@ This contract is able to receive `Slices` (ERC1155 tokens) and receive income fr
 - `JBETHERC20ProjectPayerTokensReceiverClone`: Clone implementation of `JBETHERC20ProjectPayerTokensReceiver`
 - `JBETHERC20ProjectPayerTokensReceiverCloneDeployer`: Factory contract to deploy and initialize `JBETHERC20ProjectPayerTokensReceiverClone` clones.
 
-### ERC1155 Receiver
+#### ERC1155 Receiver
 
 `JBETHERC20ProjectPayerERC1155Receiver` contracts contains the same logic, just without support for ERC721 tokens.
 
