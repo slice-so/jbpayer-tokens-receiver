@@ -1,5 +1,5 @@
 import { ethers } from "hardhat"
-import { JBETHERC20ProjectPayerERC1155ReceiverDeployer } from "../typechain-types/JBETHERC20ProjectPayerERC1155ReceiverDeployer"
+import { JBETHERC20ProjectPayerTokensReceiverCloneDeployer } from "../typechain-types/JBETHERC20ProjectPayerTokensReceiverCloneDeployer"
 import addresses from "../addresses.json"
 
 const env = "testnet" // tesntet OR mainnet
@@ -21,9 +21,9 @@ async function main() {
   console.log("Cloning")
 
   const deployFactory = (await ethers.getContractAt(
-    "JBETHERC20ProjectPayerERC1155ReceiverDeployer",
-    addresses[env].DeployFactoryAddress
-  )) as JBETHERC20ProjectPayerERC1155ReceiverDeployer
+    "JBETHERC20ProjectPayerTokensReceiverCloneDeployer",
+    addresses[env].DeployCloneFactory
+  )) as JBETHERC20ProjectPayerTokensReceiverCloneDeployer
 
   const cloneTx = await deployFactory.cloneProjectPayer(
     _defaultProjectId,

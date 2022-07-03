@@ -1,5 +1,5 @@
 import { ethers } from "hardhat"
-import { JBETHERC20ProjectPayerERC1155Receiver } from "../typechain-types/JBETHERC20ProjectPayerERC1155Receiver"
+import { JBETHERC20ProjectPayerTokensReceiver } from "../typechain-types/JBETHERC20ProjectPayerTokensReceiver"
 
 const projectPayer = ""
 const erc20 = "0x4F6Ff17F5dCb4f413C5f1b7eC42D6c18666452B0" // Rinkeby SLX
@@ -10,9 +10,9 @@ async function main() {
   console.log("Transferring")
 
   const jbpp = (await ethers.getContractAt(
-    "JBETHERC20ProjectPayerERC1155Receiver",
+    "JBETHERC20ProjectPayerTokensReceiver",
     projectPayer
-  )) as JBETHERC20ProjectPayerERC1155Receiver
+  )) as JBETHERC20ProjectPayerTokensReceiver
 
   await jbpp._transferERC20To(erc20, to, amount)
 

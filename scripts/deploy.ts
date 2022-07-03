@@ -20,7 +20,7 @@ async function main() {
   console.log("deploying")
 
   const CONTRACT = await ethers.getContractFactory(
-    "JBETHERC20ProjectPayerERC1155Receiver"
+    "JBETHERC20ProjectPayerTokensReceiver"
   )
   const contract = await CONTRACT.deploy(
     _defaultProjectId,

@@ -4,7 +4,7 @@ async function main() {
   console.log("deploying")
 
   const CONTRACT = await ethers.getContractFactory(
-    "JBETHERC20ProjectPayerERC1155ReceiverDeployer" // OR `JBETHERC20ProjectPayerERC1155ReceiverCloneDeployer`
+    "JBETHERC20ProjectPayerTokensReceiverCloneDeployer" // OR `JBETHERC20ProjectPayerTokensReceiverDeployer`
   )
   const contract = await CONTRACT.deploy()
   await contract.deployed()
