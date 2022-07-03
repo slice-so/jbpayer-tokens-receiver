@@ -4,7 +4,8 @@
     "ProductsModule": "0x689Bba0e25c259b205ECe8e6152Ee1eAcF307f5F",
     "FundsModule": "0x6bcA3Dfd6c2b146dcdd460174dE95Fd1e26960BC",
     "SlicerManager": "0x3e3E34f43a88EF99d448800B5d0579c6360a32b6",
-    "DeployFactoryAddress": "",
+    "DeployFactory": "0x3497b05B7466431FfA3DE7bF3cC037c083062f18",
+    "DeployCloneFactory": "0x76dad5968ab456b5a36698a252b30488a1a4f767",
     "JBDirectory": "0xCc8f7a89d89c2AB3559f484E0C656423E979ac9C"
   },
   "testnet": {
@@ -12,7 +13,8 @@
     "ProductsModule": "0x690932aCc7015e7B5Df2146fF11703Be0a4A14B1",
     "FundsModule": "0x093190b8c22D37871eaB814486C62303c1aE5d14",
     "SlicerManager": "0x2371683b6b67Fa952B5a2cE4898b17EB4905BAEa",
-    "DeployFactoryAddress": "0xa3Ca9d137C27C5e438f3f3A89f8579655dE571A5",
+    "DeployFactory": "0x472129986fd939e4f93A41422816Ea1382C4F7A0",
+    "DeployCloneFactory": "0x3991cb7d214Ffb94ad792a45D329d2bCF977961B",
     "JBDirectory": "0x1A9b04A9617ba5C9b7EBfF9668C30F41db6fC21a"
   }
 }
