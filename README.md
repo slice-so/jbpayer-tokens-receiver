@@ -1,15 +1,28 @@
 # JB Project Payer Extension – Tokens Receiver
 
-This repo contains extensions of `JBETHERC20ProjectPayer` which allow JB treasuries to directly use Slice, and more in general to receive ERC721 and ERC1155 tokens.
+This repo contains extensions of `JBETHERC20ProjectPayer` which which makes it possible for JB treasuries to integrate with Slice, and more in general to receive ERC721 and ERC1155 tokens.
 
 `JBETHERC20ProjectPayerTokensReceiver` includes logic to:
 
 - Receive ERC1155 and ERC721 tokens
 - Transfer ERC1155, ERC721 and ERC20 tokens received (OnlyOwner)
 
-This basically turns the contract into a **NFT vault for JB treasuries**, and allows projects to integrate with [Slice protocol](https://slice.so) and **split payments or sell anything fully on-chain via decentralized stores**.
+This basically turns the contract into a **NFT vault for JB treasuries**, while allowing projects to use [Slice protocol](https://slice.so) and **split payments or sell anything fully on-chain via decentralized stores**.
 
 > The contract can be deployed directly, via a `JBETHERC20ProjectPayerERC1155ReceiverDeployer` contract, or via a clone factory `JBETHERC20ProjectPayerTokensReceiverCloneDeployer` (cheapest method).
+
+## Usage
+
+1. Deploy or clone contract
+2. Send ERC1155 or ERC721 tokens to it
+3. Contract owner (ideally also JB project owner) can send them out of contract to a desired address
+
+### Usage with Slice
+
+This contract is able to receive `Slices` (ERC1155 tokens) and receive income from a slicer. It acts as a bridge contract between the Slice protocol and a JB treasury.
+
+- Slices can be sent either during [slicer creation](https://slice.so/slice) or via token transfer
+- Earnings from a slicer can be withdrawn by going to its page on Slice.so and releasing the due amount from the `See owners` section
 
 ## Deployment - Immutable clones
 
@@ -25,6 +38,13 @@ This basically turns the contract into a **NFT vault for JB treasuries**, and al
 
 `JBETHERC20ProjectPayerERC1155Receiver` contracts contains the same logic, just without support for ERC721 tokens.
 
+### Deployed addresses
+
+- Rinkeby Clone Factory: `0x3991cb7d214Ffb94ad792a45D329d2bCF977961B`
+- Ethereum Mainnet Clone Factory: `0x76dad5968ab456b5a36698a252b30488a1a4f767`
+
+> See full list of addresses in [addresses.json](https://github.com/slice-so/jbpayer-tokens-receiver/blob/master/addresses.json)
+
 ## Scripts
 
 - `deploy`: Deploys instance of `JBETHERC20ProjectPayerTokensReceiver`
@@ -36,7 +56,7 @@ This basically turns the contract into a **NFT vault for JB treasuries**, and al
 ## Examples
 
 - Example clone implementation contract: [0xa258299345ea4490A0323035249fE33198283789](https://rinkeby.etherscan.io/address/0xa258299345ea4490a0323035249fe33198283789)
-- [This JB V2 treasury on Rinkeby](https://rinkeby.juicebox.money/#/v2/p/4236) shows how the contract above was used to direct income from Slice directly into the treasury, upon withdraw.
+- [This JB V2 treasury on Rinkeby](https://rinkeby.juicebox.money/#/v2/p/4236) has used the contract above to direct income from Slice directly into the treasury, upon withdraw. (Note: tx don't appear in the _activity_ section as `addToBalance` is used instead of `pay`. See this [transaction on Etherscan](https://rinkeby.etherscan.io/tx/0x048c7579cd6bd7943b93c965c5e8b04c5e5ddf3852812991fb7ecea276513355) for more details)
 - See all relevant Rinkeby and mainnet deployments in [addresses.json](https://github.com/slice-so/jbpayer-tokens-receiver/blob/master/addresses.json)
 
 ## Caveats
